@@ -5,11 +5,15 @@ workflows:
     environment:
       flutter: stable
       xcode: latest
+      java: 17
     cache:
       cache_paths:
         - ~/.pub-cache
         - $FCI_BUILD_DIR/android/.gradle
     scripts:
+      - name: Set up local.properties
+        script: |
+          echo "flutter.sdk=$HOME/programs/flutter" > "$FCI_BUILD_DIR/android/local.properties"
       - name: Get Flutter packages
         script: |
           flutter pub get
