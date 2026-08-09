@@ -1,0 +1,34 @@
+workflows:
+  android-release:
+    name: Android Release Build
+    instance: mac_mini_m2
+    environment:
+      flutter: stable
+      xcode: latest
+      java: 17
+    cache:
+      cache_paths:
+        - ~/.pub-cache
+        - $FCI_BUILD_DIR/android/.gradle
+    scripts:
+      - name: Set up local.properties
+        script: |
+          echo "flutter.sdk=$HOME/programs/flutter" > "$FCI_BUILD_DIR/android/local.properties"
+          echo "flutter.buildMode=release" >> "$FCI_BUILD_DIR/android/local.properties"
+          echo "flutter.versionName=1.0.0" >> "$FCI_BUILD_DIR/android/local.properties"
+          echo "flutter.versionCode=1" >> "$FCI_BUILD_DIR/android/local.properties"
+      - name: Get Flutter packages
+        script: |
+          flutter pub get
+      - name: Generate Hive adapters
+        script: |
+          flutter packages pub run build_runner build --delete-conflicting-outputs
+      - name: Build Android APK
+        script: |
+          flutter build apk --release
+    artifacts:
+      - build/app/outputs/flutter-apk/*.apk
+    publishing:
+      email:
+        recipients:
+          - your-email@example.com
