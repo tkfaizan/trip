@@ -39,6 +39,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     const Text('Remember login'),
                   ],
                 ),
+                const SizedBox(height: 8),
+                const Text(
+                  'Developed by Faizan Ahmed TK',
+                  style: TextStyle(fontSize: 13, color: Colors.grey, fontWeight: FontWeight.w500),
+                ),
                 const SizedBox(height: 16),
                 SizedBox(
                   width: double.infinity,

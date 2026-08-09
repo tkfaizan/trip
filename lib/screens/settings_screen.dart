@@ -51,6 +51,20 @@ class SettingsScreen extends StatelessWidget {
                 child: const Text('Logout'),
               ),
             ),
+            const SizedBox(height: 24),
+            const Center(
+              child: Text(
+                'Developed by Faizan Ahmed TK',
+                style: TextStyle(fontSize: 13, color: Colors.grey, fontWeight: FontWeight.w500),
+              ),
+            ),
+            const SizedBox(height: 8),
+            const Center(
+              child: Text(
+                'Version 1.0.0',
+                style: TextStyle(fontSize: 12, color: Colors.grey),
+              ),
+            ),
           ],
         ),
       ),
