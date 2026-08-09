@@ -27,10 +27,10 @@ class TripHomeScreen extends StatelessWidget {
                 padding: const EdgeInsets.all(16),
                 child: Column(
                   children: [
-                    _infoRow('Members', '\${members.length}'),
-                    _infoRow('Total Collected', '₹\${p.totalCollected.toStringAsFixed(0)}'),
-                    _infoRow('Total Expenses', '₹\${p.totalExpenses.toStringAsFixed(0)}'),
-                    _infoRow('Remaining', '₹\${p.remaining.toStringAsFixed(0)}', isPositive: p.remaining >= 0),
+                    _infoRow('Members', '${members.length}'),
+                    _infoRow('Total Collected', '₹${p.totalCollected.toStringAsFixed(0)}'),
+                    _infoRow('Total Expenses', '₹${p.totalExpenses.toStringAsFixed(0)}'),
+                    _infoRow('Remaining', '₹${p.remaining.toStringAsFixed(0)}', isPositive: p.remaining >= 0),
                   ],
                 ),
               ),
@@ -46,8 +46,8 @@ class TripHomeScreen extends StatelessWidget {
                   final total = p.dayTotal(day);
                   return Card(
                     child: ListTile(
-                      title: Text('Day \$day'),
-                      trailing: Text('₹\${total.toStringAsFixed(0)}', style: const TextStyle(fontWeight: FontWeight.w500)),
+                      title: Text('Day $day'),
+                      trailing: Text('₹${total.toStringAsFixed(0)}', style: const TextStyle(fontWeight: FontWeight.w500)),
                     ),
                   );
                 },

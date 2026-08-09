@@ -128,7 +128,7 @@ class _ExpensesScreenState extends State<ExpensesScreen> {
                 return Padding(
                   padding: const EdgeInsets.only(right: 8),
                   child: ChoiceChip(
-                    label: Text('Day \$day'),
+                    label: Text('Day $day'),
                     selected: selected,
                     onSelected: (_) => p.setDay(day),
                   ),
@@ -146,9 +146,9 @@ class _ExpensesScreenState extends State<ExpensesScreen> {
                       final payer = p.members.firstWhere((m) => m.id == e.paidBy, orElse: () => Member(id: 0, tripId: 0, name: 'Unknown'));
                       return Card(
                         child: ListTile(
-                          title: Text('\${e.category}\${e.description != null && e.description!.isNotEmpty ? ' — \${e.description}' : ''}'),
-                          subtitle: Text('Paid by \${payer.name} · \${e.participants.length} people'),
-                          trailing: Text('₹\${e.amount.toStringAsFixed(0)}', style: const TextStyle(fontWeight: FontWeight.w500)),
+                          title: Text('${e.category}${e.description != null && e.description!.isNotEmpty ? ' - ${e.description}' : ''}'),
+                          subtitle: Text('Paid by ${payer.name} · ${e.participants.length} people'),
+                          trailing: Text('₹${e.amount.toStringAsFixed(0)}', style: const TextStyle(fontWeight: FontWeight.w500)),
                           onTap: () => _showExpenseDialog(expense: e),
                         ),
                       );

@@ -32,7 +32,7 @@ class DashboardScreen extends StatelessWidget {
                     Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                       Text('Active Trips', style: TextStyle(color: Theme.of(context).colorScheme.onPrimary.withOpacity(0.8))),
                       const SizedBox(height: 4),
-                      Text('\${trips.length}', style: TextStyle(fontSize: 36, fontWeight: FontWeight.w500, color: Theme.of(context).colorScheme.onPrimary)),
+                      Text('${trips.length}', style: TextStyle(fontSize: 36, fontWeight: FontWeight.w500, color: Theme.of(context).colorScheme.onPrimary)),
                     ]),
                   ],
                 ),
@@ -55,7 +55,7 @@ class DashboardScreen extends StatelessWidget {
                         return Card(
                           child: ListTile(
                             title: Text(t.name),
-                            subtitle: Text('\${t.startDate} · \${t.numberOfDays} days · Expenses: ₹\${totalExp.toStringAsFixed(0)}'),
+                            subtitle: Text('${t.startDate} · ${t.numberOfDays} days · Expenses: ₹${totalExp.toStringAsFixed(0)}'),
                             trailing: IconButton(
                               icon: const Icon(Icons.delete_outline),
                               onPressed: () {

@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           fontFamily: 'Roboto',
-          cardTheme: CardTheme(elevation: 0, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),
+          cardTheme: CardThemeData(elevation: 0, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),
           inputDecorationTheme: InputDecorationTheme(
             border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
             contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),

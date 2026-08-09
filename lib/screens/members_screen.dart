@@ -83,9 +83,9 @@ class _MembersScreenState extends State<MembersScreen> {
                 return Card(
                   child: ListTile(
                     title: Text(m.name),
-                    subtitle: Text('Paid: ₹\${m.totalPaid.toStringAsFixed(0)} · Share: ₹\${share.toStringAsFixed(0)}'),
+                    subtitle: Text('Paid: ₹${m.totalPaid.toStringAsFixed(0)} · Share: ₹${share.toStringAsFixed(0)}'),
                     trailing: Chip(
-                      label: Text('\${balance >= 0 ? '+' : ''}₹\${balance.toStringAsFixed(0)}'),
+                      label: Text('${balance >= 0 ? '+' : ''}₹${balance.toStringAsFixed(0)}'),
                       backgroundColor: balance > 0 ? Colors.green.shade100 : balance < 0 ? Colors.red.shade100 : Colors.grey.shade200,
                     ),
                     onTap: () => _showMemberDialog(member: m),

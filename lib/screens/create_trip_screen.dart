@@ -27,7 +27,7 @@ class _CreateTripScreenState extends State<CreateTripScreen> {
             const SizedBox(height: 12),
             ListTile(
               title: const Text('Start Date'),
-              subtitle: Text('\${_start.toLocal()}'.split(' ')[0]),
+              subtitle: Text('${_start.toLocal()}'.split(' ')[0]),
               trailing: const Icon(Icons.calendar_today),
               onTap: () async {
                 final d = await showDatePicker(context: context, initialDate: _start, firstDate: DateTime(2024), lastDate: DateTime(2030));

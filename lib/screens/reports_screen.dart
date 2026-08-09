@@ -26,10 +26,10 @@ class ReportsScreen extends StatelessWidget {
                   children: [
                     const Text('Trip Financial Summary', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
                     const SizedBox(height: 12),
-                    _row('Total Members', '\${p.members.length}'),
-                    _row('Total Paid', '₹\${p.totalCollected.toStringAsFixed(0)}'),
-                    _row('Total Expenses', '₹\${p.totalExpenses.toStringAsFixed(0)}'),
-                    _row('Remaining', '₹\${p.remaining.toStringAsFixed(0)}'),
+                    _row('Total Members', '${p.members.length}'),
+                    _row('Total Paid', '₹${p.totalCollected.toStringAsFixed(0)}'),
+                    _row('Total Expenses', '₹${p.totalExpenses.toStringAsFixed(0)}'),
+                    _row('Remaining', '₹${p.remaining.toStringAsFixed(0)}'),
                   ],
                 ),
               ),
@@ -54,9 +54,9 @@ class ReportsScreen extends StatelessWidget {
                         ],
                         rows: balances.map((b) => DataRow(cells: [
                           DataCell(Text(b.member.name)),
-                          DataCell(Text('₹\${b.paid.toStringAsFixed(0)}')),
-                          DataCell(Text('₹\${b.share.toStringAsFixed(0)}')),
-                          DataCell(Text('\${b.balance >= 0 ? '+' : ''}₹\${b.balance.toStringAsFixed(0)}', style: TextStyle(color: b.balance > 0 ? Colors.green : b.balance < 0 ? Colors.red : null, fontWeight: FontWeight.w500))),
+                          DataCell(Text('₹${b.paid.toStringAsFixed(0)}')),
+                          DataCell(Text('₹${b.share.toStringAsFixed(0)}')),
+                          DataCell(Text('${b.balance >= 0 ? '+' : ''}₹${b.balance.toStringAsFixed(0)}', style: TextStyle(color: b.balance > 0 ? Colors.green : b.balance < 0 ? Colors.red : null, fontWeight: FontWeight.w500))),
                         ])).toList(),
                       ),
                     ),
@@ -75,7 +75,7 @@ class ReportsScreen extends StatelessWidget {
                         ...balances.map((b) => [b.member.name, b.paid.toStringAsFixed(0), b.share.toStringAsFixed(0), b.balance.toStringAsFixed(0)]),
                       ];
                       final csv = const ListToCsvConverter().convert(rows);
-                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('CSV ready: \${csv.length} chars')));
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('CSV ready: ${csv.length} chars')));
                     },
                     icon: const Icon(Icons.download),
                     label: const Text('Export CSV'),

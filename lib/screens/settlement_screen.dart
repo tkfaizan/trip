@@ -27,7 +27,7 @@ class SettlementScreen extends StatelessWidget {
                         Text(s.from, style: const TextStyle(fontWeight: FontWeight.w500)),
                         const Icon(Icons.arrow_forward, color: Colors.grey),
                         Text(s.to, style: const TextStyle(fontWeight: FontWeight.w500)),
-                        Text('₹\${s.amount.toStringAsFixed(0)}', style: const TextStyle(fontWeight: FontWeight.w500)),
+                        Text('₹${s.amount.toStringAsFixed(0)}', style: const TextStyle(fontWeight: FontWeight.w500)),
                       ],
                     ),
                   ),
