@@ -1,0 +1,27 @@
+workflows:
+  android-release:
+    name: Android Release Build
+    instance: mac_mini_m2
+    environment:
+      flutter: stable
+      xcode: latest
+    cache:
+      cache_paths:
+        - ~/.pub-cache
+        - $FCI_BUILD_DIR/android/.gradle
+    scripts:
+      - name: Get Flutter packages
+        script: |
+          flutter pub get
+      - name: Generate Hive adapters
+        script: |
+          flutter packages pub run build_runner build --delete-conflicting-outputs
+      - name: Build Android APK
+        script: |
+          flutter build apk --release
+    artifacts:
+      - build/app/outputs/flutter-apk/*.apk
+    publishing:
+      email:
+        recipients:
+          - your-email@example.com
